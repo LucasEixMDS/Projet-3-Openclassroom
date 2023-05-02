@@ -65,7 +65,7 @@ fetch("http://localhost:5678/api/users/check", {
 
 
   // Vérifier si l'utilisateur est connecté
-if (localStorage.getItem("token")) {
+if (localStorage.setItem("token, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY4MzAwNDQzNCwiZXhwIjoxNjgzMDkwODM0fQ.vaG0T7etRrAemDaA2OT_bPa6soDP0GoOkzQGJFiZCEw')) {
  
   // Afficher logout à la place de login 
   const connexionLOGOUT = document.getElementById("verbes");
