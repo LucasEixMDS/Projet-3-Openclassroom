@@ -87,6 +87,9 @@ const buttonFilter = document.getElementById("buttonFilter");
 const buttonLogout = document.querySelector(".btn-logout");
 const buttonLogin = document.querySelector(".btn-login");
 const blackHeader = document.getElementById("blackHeader");
+const changeColor = document.getElementById("changeColor");
+const ButtonModif = document.getElementById("buttonModification");
+const mesProjets = document.querySelector(".projetModif");
 
 if (
   sessionStorage.getItem("token") !== null &&
@@ -97,4 +100,9 @@ if (
   buttonLogin.style.display = "none";
 } else {
   blackHeader.style.display = "none";
+  changeColor.style.display = "none";
+  ButtonModif.style.display = "none";
+  mesProjets.style.marginLeft = "0px";
+  mesProjets.style.marginTop = "126px";
+  buttonFilter.style.marginBottom = "20px";
 }
