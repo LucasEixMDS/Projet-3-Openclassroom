@@ -2,11 +2,9 @@
 const affiche = document.querySelector(".gallery");
 console.log(sessionStorage.getItem("token"));
 
-
-function displayProject(data, filtre=null){
-
+function displayProject(data, filtre = null) {
   data.forEach((project) => {
-    if (project.category.id == filtre || filtre == null) { 
+    if (project.category.id == filtre || filtre == null) {
       // mes 3 const, figure pour la forme, img pour recuperer l'image, titre le titre
       const figure = document.createElement("figure");
       const image = document.createElement("img");
@@ -21,9 +19,8 @@ function displayProject(data, filtre=null){
       figure.appendChild(image);
       figure.appendChild(titre);
       affiche.appendChild(figure);
-    } 
-    
-  })
+    }
+  });
 }
 
 // utilisation de fetch pour recuperer les projets via l'API
@@ -32,8 +29,7 @@ fetch("http://localhost:5678/api/works")
   .then((Response) => Response.json())
   .then((data) => {
     //utilisation de foreach pour faire une boucle et avoir plusieurs projets
-    displayProject(data)
-    
+    displayProject(data);
   });
 
 // filtre des buttons au clique, premier button --> afficher tous les projets
@@ -45,8 +41,7 @@ buttonTous.addEventListener("click", function () {
     .then((Response) => Response.json())
     .then((data) => {
       //utilisation de foreach pour faire une boucle et avoir plusieurs projets
-      displayProject(data)
-      
+      displayProject(data);
     });
 });
 
@@ -59,8 +54,7 @@ buttonObjets.addEventListener("click", function () {
     .then((Response) => Response.json())
     .then((data) => {
       //utilisation de foreach pour faire une boucle et avoir plusieurs projets
-      displayProject(data, 1)
-      
+      displayProject(data, 1);
     });
 });
 
@@ -73,8 +67,7 @@ buttonApparts.addEventListener("click", function () {
     .then((Response) => Response.json())
     .then((data) => {
       //utilisation de foreach pour faire une boucle et avoir plusieurs projets
-      displayProject(data, 2)
-      
+      displayProject(data, 2);
     });
 });
 
@@ -91,15 +84,17 @@ buttonHotel.addEventListener("click", function () {
 });
 
 const buttonFilter = document.getElementById("buttonFilter");
-const buttonLogout = document.querySelector(".btn-logout")
-const buttonLogin= document.querySelector(".btn-login")
+const buttonLogout = document.querySelector(".btn-logout");
+const buttonLogin = document.querySelector(".btn-login");
+const blackHeader = document.getElementById("blackHeader");
 
-
-
-if (sessionStorage.getItem("token") !== null && sessionStorage.getItem("token") !== ""){
+if (
+  sessionStorage.getItem("token") !== null &&
+  sessionStorage.getItem("token") !== ""
+) {
   buttonFilter.style.opacity = 0;
   buttonLogout.style.display = "block";
   buttonLogin.style.display = "none";
-
+} else {
+  blackHeader.style.display = "none";
 }
-
