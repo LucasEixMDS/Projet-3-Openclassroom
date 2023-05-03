@@ -1,5 +1,7 @@
 // const pour intégrer dans mon html les projets
 const affiche = document.querySelector(".gallery");
+console.log(sessionStorage.getItem("token"));
+
 
 function displayProject(data, filtre=null){
 
@@ -87,4 +89,17 @@ buttonHotel.addEventListener("click", function () {
       displayProject(data, 3);
     });
 });
+
+const buttonFilter = document.getElementById("buttonFilter");
+const buttonLogout = document.querySelector(".btn-logout")
+const buttonLogin= document.querySelector(".btn-login")
+
+
+
+if (sessionStorage.getItem("token") !== null && sessionStorage.getItem("token") !== ""){
+  buttonFilter.style.opacity = 0;
+  buttonLogout.style.display = "block";
+  buttonLogin.style.display = "none";
+
+}
 

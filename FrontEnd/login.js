@@ -1,6 +1,8 @@
 const button = document.getElementById("connexion")
+const form = document.querySelector("#login-form")
 
-document.querySelector("#login-form").addEventListener("submit", function (event) {
+
+form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const error = document.querySelector('#error-message')
@@ -26,8 +28,8 @@ document.querySelector("#login-form").addEventListener("submit", function (event
         .then(data => {
           const { userId, token } = data;
             // Stocker l'ID utilisateur et le jeton d'authentification localement
-        localStorage.setItem("userId", userId);
-        localStorage.setItem("token", token);
+        sessionStorage.setItem("userId", userId);
+        sessionStorage.setItem("token", token);
         // Rediriger l'utilisateur vers la page suivante
         window.location.replace("index.html");
       })
@@ -42,43 +44,3 @@ document.querySelector("#login-form").addEventListener("submit", function (event
 
 
 
-
-
-
-// Récupérer le token depuis le stockage local
-const token = localStorage.getItem("token");
-
-
-// Envoyer une requête au serveur pour vérifier si l'utilisateur est connecté
-fetch("http://localhost:5678/api/users/check", {
-  headers: {
-    Authorization: `Bearer ${token}`
-  }
-})
-.then(response => {
-  const buttonFilter = document.getElementById('buttonFilter')
-  if (response.ok) {
-    buttonFilter.style.opacity = 0;
-  } 
-});
-
-
-
-  // Vérifier si l'utilisateur est connecté
-if (localStorage.setItem("token, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY4MzAwNDQzNCwiZXhwIjoxNjgzMDkwODM0fQ.vaG0T7etRrAemDaA2OT_bPa6soDP0GoOkzQGJFiZCEw')) {
- 
-  // Afficher logout à la place de login 
-  const connexionLOGOUT = document.getElementById("verbes");
-  connexionLOGOUT.innerHTML = "Logout";
-
-} else {
-  const connexionLOGIN = document.getElementById("verbes");
-  connexionLOGIN.innerHTML = "Login";
-
-}
-
-const buttonFilter = document.getElementById('buttonFilter')
-
-if (localStorage.getItem("token")) {
- buttonFilter.style.opacity = 0;
-}

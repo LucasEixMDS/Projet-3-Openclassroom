@@ -195,6 +195,12 @@ input[type="submit"]{
 	color: black;
 	text-decoration: none;
 }
+
+.btn-logout{
+	display: none;
+}
+
+
 #verbes:hover{
 	color: #B1663C;
 }
