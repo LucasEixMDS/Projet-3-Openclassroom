@@ -401,7 +401,7 @@ align-items: center;
 
 .projetModifCacher {
 	z-index: 999;
-	background: rgb(255, 253, 240);
+	background: rgb(255, 254, 247);
 	border: 1px solid black;
 	position: absolute;
 	width: 630px;
@@ -430,10 +430,9 @@ align-items: center;
 	display: flex;
 	justify-content: center;
 	margin-top:15px ;
-  }
-  h3{
 	font-size: 26px ;
   }
+ 
 
   hr{
 	color: #B3B3B3;
@@ -464,7 +463,6 @@ align-items: center;
   .photoAjout p {
 	margin-left: 250px;
 	color: red;
-	text-decoration: underline;
   }
   #overlay {
 	position: fixed;

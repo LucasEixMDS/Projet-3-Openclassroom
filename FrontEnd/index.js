@@ -89,6 +89,11 @@ const buttonLogin = document.querySelector(".btn-login");
 const blackHeader = document.getElementById("blackHeader");
 const changeColor = document.getElementById("changeColor");
 const mesProjets = document.querySelector(".projetModif");
+const ButtonModif = document.querySelectorAll(
+  ".buttonEdition, .btn-edit, #buttonModification, #buttonModif, #buttonModification2"
+);
+const ModifCacher = document.querySelector(".projetModifCacher");
+const overlay = document.getElementById("overlay");
 
 if (
   sessionStorage.getItem("token") !== null &&
@@ -100,17 +105,13 @@ if (
 } else {
   blackHeader.style.display = "none";
   changeColor.style.display = "none";
-  ButtonModif.style.display = "none";
+  ButtonModif.forEach((button) => {
+    button.style.display = "none";
+  });
   mesProjets.style.marginLeft = "0px";
   mesProjets.style.marginTop = "126px";
   buttonFilter.style.marginBottom = "20px";
 }
-
-const ButtonModif = document.querySelectorAll(
-  ".buttonEdition, .btn-edit, #buttonModification, #buttonModif, #buttonModification2"
-);
-const ModifCacher = document.querySelector(".projetModifCacher");
-const overlay = document.getElementById("overlay");
 
 ButtonModif.forEach((button) => {
   button.addEventListener("click", () => {
