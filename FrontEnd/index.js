@@ -88,7 +88,6 @@ const buttonLogout = document.querySelector(".btn-logout");
 const buttonLogin = document.querySelector(".btn-login");
 const blackHeader = document.getElementById("blackHeader");
 const changeColor = document.getElementById("changeColor");
-const ButtonModif = document.getElementById("buttonModification");
 const mesProjets = document.querySelector(".projetModif");
 
 if (
@@ -106,3 +105,29 @@ if (
   mesProjets.style.marginTop = "126px";
   buttonFilter.style.marginBottom = "20px";
 }
+
+const ButtonModif = document.querySelectorAll(
+  ".buttonEdition, .btn-edit, #buttonModification, #buttonModif, #buttonModification2"
+);
+const ModifCacher = document.querySelector(".projetModifCacher");
+const overlay = document.getElementById("overlay");
+
+ButtonModif.forEach((button) => {
+  button.addEventListener("click", () => {
+    ModifCacher.style.opacity = 1;
+    ModifCacher.style.visibility = "visible";
+    overlay.classList.add("show");
+  });
+});
+overlay.addEventListener("click", () => {
+  ModifCacher.style.opacity = 0;
+  overlay.classList.remove("show");
+});
+
+const closeBtn = document.querySelector(".close-btn");
+
+closeBtn.addEventListener("click", () => {
+  ModifCacher.style.opacity = 0;
+  ModifCacher.style.visibility = "hidden";
+  overlay.classList.remove("show");
+});
