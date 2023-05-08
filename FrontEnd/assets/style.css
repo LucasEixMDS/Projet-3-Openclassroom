@@ -402,12 +402,11 @@ align-items: center;
 .projetModifCacher {
 	z-index: 999;
 	background: rgb(255, 254, 247);
-	border: 1px solid black;
 	position: absolute;
 	width: 630px;
-	height: 730px;
+	height: fit-content;
 	border-radius: 10px;
-	top: 1060px;
+	top: 950px;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -416,6 +415,7 @@ align-items: center;
 	display: flex;
 	flex-direction: column;
 	visibility: hidden;
+	overflow: hidden;
   }
 
   .divClose{
@@ -439,9 +439,7 @@ align-items: center;
     width: 420px;
     height: 0px;
     border: 1px solid #B3B3B3;
-    position: absolute;
-    left: 110px;
-    top: 544px;
+	text-align: center;
   }
 
   .photoAjout{
@@ -457,12 +455,12 @@ align-items: center;
 	height: 36px;
 	width: 237px;
 	border: none;
-	margin-top: 500px;
   }
 
   .photoAjout p {
 	margin-left: 250px;
 	color: red;
+	margin-bottom: 20px;
   }
   #overlay {
 	position: fixed;
@@ -470,7 +468,7 @@ align-items: center;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.5);
 	visibility: hidden;
 	opacity: 0;
 	z-index: 998;
@@ -482,4 +480,34 @@ align-items: center;
 	visibility: visible;
 	opacity: 1;
 	display: block;
+  }
+
+  #galleryContainer {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	margin: 20px 102px;
+}
+
+  #galleryContainer figure img{
+	width: 90%;
+	object-fit: contain;
+  }
+
+  #modalContainer{
+	display: flex;
+  }
+
+  #deleteIMG{
+	width: 15px !important;
+  }
+
+  .deleteBTN{
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 2px;
+  }
+
+  .deleteBTN:hover{
+	background-color: rgba(0, 0, 0, 0.7);
   }

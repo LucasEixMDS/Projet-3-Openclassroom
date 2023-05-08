@@ -13,6 +13,8 @@ function displayProject(data, filtre = null) {
       // chemin pour recuperer dans l'api l'image et le titre
       image.src = project.imageUrl;
       titre.textContent = project.title;
+      figure.id = project.id; // Ajouter l'ID unique comme ID pour l'élément HTML
+
       // utilisation de appenchild pour que mes projets
       // s'affiche bien les un à la suite des autres
       // dans le bonne ordre
@@ -113,22 +115,33 @@ if (
   buttonFilter.style.marginBottom = "20px";
 }
 
+
 ButtonModif.forEach((button) => {
   button.addEventListener("click", () => {
     ModifCacher.style.opacity = 1;
     ModifCacher.style.visibility = "visible";
-    overlay.classList.add("show");
+    overlay.style.visibility = "visible";
+    overlay.style.opacity = "1";
+    overlay.style.display = "flex" ;
   });
 });
-overlay.addEventListener("click", () => {
-  ModifCacher.style.opacity = 0;
-  overlay.classList.remove("show");
-});
+
 
 const closeBtn = document.querySelector(".close-btn");
 
 closeBtn.addEventListener("click", () => {
   ModifCacher.style.opacity = 0;
   ModifCacher.style.visibility = "hidden";
-  overlay.classList.remove("show");
+  overlay.style.visibility = "hidden";
+    overlay.style.opacity = "0";
+    overlay.style.display = "none" ;
 });
+
+overlay.addEventListener('click', () => {
+  ModifCacher.style.opacity = 0;
+  ModifCacher.style.visibility = "hidden";
+  overlay.style.visibility = "hidden";
+    overlay.style.opacity = "0";
+    overlay.style.display = "none" ;
+})
+
