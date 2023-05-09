@@ -69,13 +69,12 @@ const deleteProject = (projectId) => {
     });
 
 
+ const formulaire = document.getElementById('modalFormulaire');
 const titleInput = document.querySelector('input[name="titre"]');
-const categoryInput = document.querySelector('input[name="categorie"]');
+const categoryInput = document.querySelector('select[name="category"]');
 const imageInput = document.querySelector('input[name="image"]');
 
-const myButton = document.getElementById('submitProject');
-console.log(myButton); // Vérifier que l'élément est sélectionné
-myButton.addEventListener('click', () => {
+formulaire.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const formData = new FormData();
@@ -98,7 +97,12 @@ myButton.addEventListener('click', () => {
   })
   .then(data => {
     console.log('Image ajoutée avec succès :', data);
-    // Réinitialiser le formulaire ou faire autre chose après l'ajout de l'image
+    // Réinitialiser le formulaire
+    titleInput.value = "";
+    categoryInput.selectedIndex = 0;
+    imageInput.value = "";
+    // Rediriger l'utilisateur vers index.html
+    window.location.href = "index.html";
   })
   .catch(error => {
     console.error('Erreur :', error);
@@ -106,3 +110,16 @@ myButton.addEventListener('click', () => {
 });
 
 
+const afficheFormulaire = document.getElementById('ajoutPhoto');
+const modalGallery = document.getElementById('modalGallery');
+const formBack = document.getElementById('arrowBack');
+
+afficheFormulaire.addEventListener('click', () => {
+    modalGallery.style.opacity = 0;
+    formulaire.style.opacity = 1;
+});
+
+formBack.addEventListener('click', () => {
+    modalGallery.style.opacity = 1;
+    formulaire.style.opacity = 0;
+})

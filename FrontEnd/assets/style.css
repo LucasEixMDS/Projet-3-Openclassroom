@@ -404,7 +404,7 @@ align-items: center;
 	background: rgb(255, 254, 247);
 	position: absolute;
 	width: 630px;
-	height: fit-content;
+	height: 631px;
 	border-radius: 10px;
 	top: 950px;
 	bottom: 0;
@@ -419,17 +419,28 @@ align-items: center;
   }
 
   .divClose{
-	margin-top: 25px;
+	margin-top: 22px;
+	z-index: 10;
+	display: flex;
+	align-items: center;
   }
+
+  #arrowBack {
+	margin-left: 34px;
+	font-size: 20px;
+  }
+
+
   .close-btn{
 	font-size: 28px;
-	margin-left: 92%;
+	margin-left: 84%;
+	z-index: 3;
   }
 
   .titreh3{
 	display: flex;
 	justify-content: center;
-	margin-top:15px ;
+	margin-top:90px ;
 	font-size: 26px ;
   }
  
@@ -487,7 +498,7 @@ align-items: center;
 	grid-template-columns: repeat(5, 1fr);
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-	margin: 20px 102px;
+	margin: 55px 102px;
 }
 
   #galleryContainer figure img{
@@ -497,7 +508,14 @@ align-items: center;
 
   #modalContainer{
 	display: flex;
+	position: absolute;
   }
+
+  #modalFormulaire{
+	position: absolute;
+	opacity: 0;
+  }
+
 
   #deleteIMG{
 	width: 15px !important;
