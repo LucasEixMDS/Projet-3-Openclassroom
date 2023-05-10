@@ -55,14 +55,25 @@ function displayGalerie(data) {
   });
 }
 
-//const deleteAllButton = document.getElementById("deleteAll");
-//deleteAllButton.addEventListener("click", () => {
-// const figures = document.querySelectorAll("#galleryContainer figure");
-//figures.forEach((figure) => {
-//const projectId = figure.id;
-// deleteProject(projectId);
-//});
-//});
+const deleteAllButton = document.getElementById("deleteAll");
+deleteAllButton.addEventListener("click", () => {
+  // Ajoute une boîte de dialogue avant de supprimer tous les projets
+  const confirmation = confirm(
+    "Êtes-vous sûr de vouloir supprimer tous les projets ?"
+  );
+  if (confirmation) {
+    // Le code à exécuter si l'utilisateur clique sur "OK"
+    // Par exemple, vous pouvez supprimer tous les projets ici
+    const figures = document.querySelectorAll("#galleryContainer figure");
+    figures.forEach((figure) => {
+      const projectId = figure.id;
+      deleteProject(projectId);
+    });
+  } else {
+    // Le code à exécuter si l'utilisateur clique sur "Annuler"
+    // Par exemple, vous pouvez ne rien faire ici
+  }
+});
 
 // utilisation de fetch pour recuperer les projets via l'API
 fetch("http://localhost:5678/api/works")
