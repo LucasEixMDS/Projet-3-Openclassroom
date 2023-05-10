@@ -124,6 +124,10 @@ afficheFormulaire.addEventListener("click", () => {
 });
 
 formBack.addEventListener("click", () => {
+  formBack.style.opacity = 0;
+});
+
+formBack.addEventListener("click", () => {
   modalGallery.style.opacity = 1;
   formulaire.style.opacity = 0;
 });

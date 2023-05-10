@@ -115,17 +115,15 @@ if (
   buttonFilter.style.marginBottom = "20px";
 }
 
-
 ButtonModif.forEach((button) => {
   button.addEventListener("click", () => {
     ModifCacher.style.opacity = 1;
     ModifCacher.style.visibility = "visible";
     overlay.style.visibility = "visible";
     overlay.style.opacity = "1";
-    overlay.style.display = "flex" ;
+    overlay.style.display = "flex";
   });
 });
-
 
 const closeBtn = document.querySelector(".close-btn");
 
@@ -133,15 +131,14 @@ closeBtn.addEventListener("click", () => {
   ModifCacher.style.opacity = 0;
   ModifCacher.style.visibility = "hidden";
   overlay.style.visibility = "hidden";
-    overlay.style.opacity = "0";
-    overlay.style.display = "none" ;
+  overlay.style.opacity = "0";
+  overlay.style.display = "none";
 });
 
-overlay.addEventListener('click', () => {
+overlay.addEventListener("click", () => {
   ModifCacher.style.opacity = 0;
   ModifCacher.style.visibility = "hidden";
   overlay.style.visibility = "hidden";
-    overlay.style.opacity = "0";
-    overlay.style.display = "none" ;
-})
-
+  overlay.style.opacity = "0";
+  overlay.style.display = "none";
+});
