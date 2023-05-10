@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Ajout de liens vers les polices Google utilisées -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Work+Sans&amp;display=swap" rel="stylesheet">
+	
+	<meta name="description" content="">
+	
+	<!-- Ajout d'un lien vers la feuille de style CSS -->
+	<link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+<header>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+	<nav>
+		<ul>
+			<!-- Ajout de liens de navigation vers différentes pages du site -->
+			<li><a id="verbe" href="index.html">projets</a></li>
+			<li><a id="verbe" href="#">Contact</a></li>
+			<li><a id="verbe" href="./login.html">connexion</a></li>
+			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+		</ul>
+	</nav>
+</header>
+
+<main>
+    <div id="login">
+        <h2 id="h2Login">Log in</h2>
+            <form action="#" method="POST" id="login-form">
+                <!-- Champs pour saisir l'adresse email et le mot de passe de l'utilisateur -->
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required=""><br><br>
+            
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required=""><br><br>
+                <!-- Ajout d'un élément d'affichage des messages d'erreur -->
+                <div id="error-message"></div>
+                <!-- Bouton pour se connecter -->
+                <button type="submit" value="submit" id="connexion">connexion</button>
+            </form>
+            <!-- Ajout d'un lien pour récupérer un mot de passe oublié -->
+            <h3 id="mdpoublie"><a id="verbe" href="#">Mot de passe oublié</a></h3>
+        </div>
+</main>
+
+<footer>
+	<nav>
+		<ul>
+			<!-- Ajout d'un lien vers la page des mentions légales -->
+			<li>Mentions Légales</li>
+		</ul>
+	</nav>
+</footer>
+
+<!-- Ajout d'un lien vers le script JavaScript pour la page de login -->
+<script src="./login.js"></script>
+
+</body>
+</html>
